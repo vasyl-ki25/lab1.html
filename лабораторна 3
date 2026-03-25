@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота 2</title>
+
+    <style>
+        body {
+            font-family: Verdana;
+            margin: 20px;
+            background-color: #f4f6f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #ccc;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        /* Меню */
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 10px;
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        /* Таблиця */
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: auto;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #dfe6e9;
+        }
+
+        /* Списки */
+        ul {
+            list-style-type: square;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Комп'ютерна інженерія</h1>
+
+<p>Рівень вищої освіти: бакалавр.</p>
+<p>Галузь знань: Інформаційні технології.</p>
+<p>Група: КІ-25-1. Виконав: Лукавський Василь.</p>
+
+<!-- Меню -->
+<nav>
+    <a href="#meta">Мета</a>
+    <a href="#kompet">Компетентності</a>
+    <a href="#table">Компоненти</a>
+</nav>
+
+<!-- Мета -->
+<h2 id="meta">Мета освітньої програми</h2>
+<p>
+Підготовка спеціалістів у сфері комп’ютерних технологій, які вміють
+розробляти та підтримувати комп’ютерні системи.
+</p>
+
+<!-- Компетентності -->
+<h2 id="kompet">Програмні компетентності</h2>
+
+<h3>Загальні компетентності</h3>
+<ul>
+    <li>Здатність до мислення</li>
+    <li>Робота в команді</li>
+    <li>Самонавчання</li>
+    <li>Використання ІТ</li>
+</ul>
+
+<h3>Фахові компетентності</h3>
+<ol>
+    <li>Програмування</li>
+    <li>Комп’ютерні мережі</li>
+    <li>Адміністрування систем</li>
+    <li>Інформаційна безпека</li>
+</ol>
+
+<!-- Таблиця -->
+<h2 id="table">Перелік компонент освітньої програми</h2>
+
+<table>
+    <tr>
+        <th>Код</th>
+        <th>Назва компонента</th>
+        <th>Кредити</th>
+    </tr>
+
+    <tr>
+        <td>ОК1</td>
+        <td>Вища математика</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>ОК2</td>
+        <td>Програмування</td>
+        <td>6</td>
+    </tr>
+
+    <tr>
+        <td>ОК3</td>
+        <td>Комп’ютерні мережі</td>
+        <td>4</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
