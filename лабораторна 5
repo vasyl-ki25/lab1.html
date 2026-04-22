@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Комп'ютерна інженерія</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Verdana, sans-serif;
+    background-color: #f5f5f5;
+  }
+
+  /* Header */
+  header {
+    height: 350px;
+    background-color: #ddeeff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.2em;
+    color: #1a1a5e;
+    text-align: center;
+  }
+
+  header p {
+    font-size: 1em;
+    color: #333;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  /* Nav */
+  nav {
+    background-color: #1a1a5e;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 18px;
+    font-size: 0.95em;
+  }
+
+  nav a:hover { color: #ffcc00; }
+
+  /* Main container */
+  main.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+
+  h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+    margin: 28px 0 14px;
+    color: #1a1a5e;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.05em;
+    font-weight: bold;
+    margin: 6px 0;
+  }
+
+  ul, ol { padding-left: 30px; margin-bottom: 14px; }
+  li { margin-bottom: 5px; }
+
+  /* Table */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 20px;
+  }
+  td, th {
+    border: 1px solid black;
+    padding: 8px;
+    vertical-align: top;
+    font-size: 0.92em;
+  }
+  th { background-color: #ddeeff; }
+  .center { text-align: center; font-weight: bold; }
+
+  /* Developers section */
+  .dev-section { margin: 20px 0; }
+
+  .dev-block {
+    display: inline-block;
+    width: 28%;
+    margin: 10px 2%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 14px;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  .dev-block img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ddeeff;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .dev-block .name { font-weight: bold; font-size: 0.95em; }
+  .dev-block .position { font-size: 0.85em; color: #555; margin-top: 4px; }
+
+  /* Feedback Form */
+  .feedback-form {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 24px 30px;
+    max-width: 600px;
+    margin: 20px auto 40px;
+  }
+
+  .feedback-form h3 {
+    margin-bottom: 16px;
+    color: #1a1a5e;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+  }
+
+  .form-group input[type="text"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: Verdana, sans-serif;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+
+  .char-counter {
+    text-align: right;
+    font-size: 0.78em;
+    color: #888;
+    margin-top: 3px;
+  }
+
+  .form-group input[type="submit"] {
+    background-color: #1a1a5e;
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    font-size: 0.95em;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .form-group input[type="submit"]:hover {
+    background-color: #2a2a8e;
+  }
+
+  /* iframe wrapper */
+  .iframe-wrapper {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 16px 0 24px;
+    background: white;
+  }
+
+  .iframe-wrapper iframe {
+    width: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* YouTube embed */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 16px 0 24px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #1a1a5e;
+    color: #ccc;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.85em;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header { height: auto; padding: 30px 16px; }
+    header h1 { font-size: 1.5em; }
+    nav a { margin: 0 8px; font-size: 0.85em; }
+    .dev-block { width: 90%; display: block; margin: 10px auto; }
+    .feedback-form { padding: 16px; }
+    main.container { padding: 0 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Комп'ютерна інженерія</h1>
+  <p>Рівень вищої освіти: Бакалавр</p>
+  <p>Спеціальність: 123 – Комп'ютерна інженерія</p>
+  <p>Виконав: Лукавський Василь</p>
+</header>
+
+<nav>
+  <a href="index.html">Головна</a>
+  <a href="competencies.html">Компетенції</a>
+  <a href="components.html">Компоненти</a>
+  <a href="graph.html">Схема</a>
+  <a href="#work-group">Робоча група</a>
+  <a href="reports.html">Звіти</a>
+</nav>
+
+<main class="container">
+
+  <h2 id="meta">Мета освітньої програми</h2>
+  <p class="subtitle">Підготовка висококваліфікованих фахівців у сфері комп'ютерної інженерії,
+  здатних розробляти, аналізувати та обслуговувати сучасні комп'ютерні системи та мережі.</p>
+
+  <h2 id="program">Програмні компетенції</h2>
+  <ul>
+    <li>Знання архітектури та принципів роботи комп'ютерних систем</li>
+    <li>Вміння програмувати на сучасних мовах програмування</li>
+    <li>Робота з комп'ютерними мережами та протоколами</li>
+  </ul>
+  <ol type="1">
+    <li>Аналіз технічних задач та вимог</li>
+    <li>Проектування апаратно-програмних систем</li>
+    <li>Реалізація та тестування розробок</li>
+  </ol>
+
+  <h2 id="har">Характеристика освітньої програми</h2>
+  <table>
+    <tr>
+      <th colspan="2" class="center">3 – Характеристика освітньої програми</th>
+    </tr>
+    <tr>
+      <td><b>Предметна область</b></td>
+      <td>Галузь знань – 12 "Інформаційні технології"<br>
+          Спеціальність – 123 "Комп'ютерна інженерія"</td>
+    </tr>
+    <tr>
+      <td><b>Опис предметної області</b></td>
+      <td>
+        Програмно-технічні засоби комп'ютерів та мереж.<br><br>
+        Методи дослідження, проектування та експлуатації систем.<br><br>
+        Зберігання, передача та обробка інформації.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Особливості програми</b></td>
+      <td>Акцент на програмуванні, мережах та сучасних ІТ-технологіях.</td>
+    </tr>
+    <tr>
+      <td><b>Придатність до працевлаштування</b></td>
+      <td>
+        Працевлаштування в якості професіонала-дослідника в галузі програмування та
+        інформаційних технологій (код 2132.2) в ІТ-компаніях Івано-Франківська, регіону,
+        України та світу.<br><br>
+        Аналітик інформаційних та комп'ютерних систем, DevOps-інженер, системний програміст.
+      </td>
+    </tr>
+    <tr>
+      <td><b>Подальше навчання</b></td>
+      <td>Можливість продовження освіти за третім (освітньо-науковим) рівнем вищої освіти.</td>
+    </tr>
+  </table>
+
+  <!-- Зворотний зв'язок — ЗАВДАННЯ 3: iframe з PDF з Google Drive -->
+  <h2 id="feedback">Зворотний зв'язок</h2>
+
+  <!-- PDF з Google Drive через iframe -->
+  <p style="margin-bottom:8px; font-size:0.92em;">Освітня програма (PDF-документ):</p>
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://drive.google.com/file/d/1BxiMVs0XpMzCwX08bHhDgzO7VsNpIjHk/preview"
+      height="500"
+      allow="autoplay"
+      title="Освітня програма – PDF">
+    </iframe>
+  </div>
+
+  <!-- ЗАВДАННЯ 4: YouTube відео про ІФНТУНГ -->
+  <p style="margin-bottom:8px; font-size:0.92em;">Відео про ІФНТУНГ:</p>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/JBA-K6Vs8dg"
+      title="Івано-Франківський національний технічний університет нафти і газу — ІФНТУНГ"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="feedback-form">
+    <h3>Питання до адміністрації</h3>
+    <div class="form-group">
+      <label for="topic">Тема повідомлення *</label>
+      <input type="text" id="topic" name="topic" minlength="5"
+             placeholder="Введіть тему (мінімум 5 символів)" required>
+    </div>
+    <div class="form-group">
+      <label for="category">Категорія питання</label>
+      <select id="category" name="category" required>
+        <option value="">-- Оберіть категорію --</option>
+        <option value="study">Навчання</option>
+        <option value="schedule">Розклад</option>
+        <option value="documents">Документи</option>
+        <option value="other">Інше</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="question">Питання *</label>
+      <textarea id="question" name="question" maxlength="500"
+                placeholder="Опишіть ваше питання..." required
+                oninput="updateCounter(this, 'qCounter', 500)"></textarea>
+      <div class="char-counter"><span id="qCounter">0</span> / 500 символів</div>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Надіслати питання">
+    </div>
+  </div>
+
+  <!-- Робоча група — ЗАВДАННЯ 2: додано заголовок + iframe nung.edu.ua -->
+  <h2 id="work-group">Робоча група</h2>
+  <p>Інформація про розробників програми:</p>
+  <div class="dev-section">
+    <div class="dev-block">
+      <img src="https://via.placeholder.com/80/ddeeff/1a1a5e?text=АБ" alt="Фото автора">
+      <div class="name">Іваненко Андрій Борисович</div>
+      <div class="position">Доктор технічних наук, професор</div>
+    </div>
+    <div class="dev-block">
+      <img src="https://via.placeholder.com/80/ddeeff/1a1a5e?text=МВ" alt="Фото автора">
+      <div class="name">Мельник Марія Василівна</div>
+      <div class="position">Кандидат наук, доцент</div>
+    </div>
+    <div class="dev-block">
+      <img src="https://via.placeholder.com/80/ddeeff/1a1a5e?text=ОК" alt="Фото автора">
+      <div class="name">Ковальчук Олег Петрович</div>
+      <div class="position">Старший викладач</div>
+    </div>
+  </div>
+
+  <!-- ЗАВДАННЯ 2: Інформація про програму через iframe nung.edu.ua/vstup -->
+  <h3 style="margin:20px 0 10px; color:#1a1a5e; font-family:Helvetica,Arial,sans-serif;">
+    Інформація про програму
+  </h3>
+  <p style="font-size:0.9em; margin-bottom:10px; color:#555;">
+    Джерело: <a href="https://nung.edu.ua/vstup" target="_blank">nung.edu.ua/vstup</a>
+  </p>
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://nung.edu.ua/vstup"
+      height="600"
+      title="Інформація про вступ – ІФНТУНГ"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+    </iframe>
+  </div>
+
+</main>
+
+<footer>
+  <p>Лукавський Василь &copy; ІФНТУНГ, 2026 р.</p>
+</footer>
+
+<script>
+  function updateCounter(el, counterId, max) {
+    document.getElementById(counterId).textContent = el.value.length;
+  }
+</script>
+
+</body>
+</html>
