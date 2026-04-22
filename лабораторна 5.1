@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Звіти – Комп'ютерна інженерія</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Verdana, sans-serif;
+    background-color: #f5f5f5;
+  }
+
+  header {
+    height: 200px;
+    background-color: #ddeeff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-family: Georgia, serif;
+    font-size: 2em;
+    color: #1a1a5e;
+    text-align: center;
+  }
+
+  header p {
+    font-size: 0.95em;
+    color: #333;
+    margin-top: 8px;
+  }
+
+  nav {
+    background-color: #1a1a5e;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 18px;
+    font-size: 0.95em;
+  }
+
+  nav a:hover { color: #ffcc00; }
+  nav a.active { color: #ffcc00; border-bottom: 2px solid #ffcc00; }
+
+  main.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+
+  h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+    margin: 28px 0 16px;
+    color: #1a1a5e;
+  }
+
+  /* Tab bar */
+  .tab-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    background: #ddeeff;
+    border: 1px solid #aac;
+    border-bottom: none;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-family: Verdana, sans-serif;
+    font-size: 0.88em;
+    font-weight: bold;
+    color: #1a1a5e;
+    border-radius: 6px 6px 0 0;
+    transition: background 0.2s;
+  }
+
+  .tab-btn.active,
+  .tab-btn:hover {
+    background: #1a1a5e;
+    color: #fff;
+  }
+
+  .tab-panel {
+    display: none;
+    background: white;
+    border: 1px solid #aac;
+    border-radius: 0 6px 6px 6px;
+    overflow: hidden;
+  }
+
+  .tab-panel.active { display: block; }
+
+  .doc-iframe {
+    width: 100%;
+    height: 680px;
+    border: none;
+    display: block;
+  }
+
+  .doc-card {
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .doc-card:last-child { border-bottom: none; }
+
+  .doc-info { flex: 1; }
+  .doc-info .title { font-weight: bold; font-size: 0.95em; color: #1a1a5e; }
+  .doc-info .desc { font-size: 0.83em; color: #666; margin-top: 4px; }
+
+  .btn-view {
+    background-color: #1a1a5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.85em;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-view:hover { background-color: #2a2a8e; }
+
+  .viewer-box {
+    background: white;
+    border: 1px solid #aac;
+    border-radius: 6px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  .viewer-title {
+    background: #1a1a5e;
+    color: white;
+    padding: 10px 16px;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .viewer-title span { font-weight: normal; font-size: 0.85em; color: #aac; }
+
+  .viewer-iframe {
+    width: 100%;
+    height: 720px;
+    border: none;
+    display: block;
+  }
+
+  footer {
+    background-color: #1a1a5e;
+    color: #ccc;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.85em;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .tab-btn { padding: 6px 10px; font-size: 0.78em; }
+    .doc-card { flex-direction: column; align-items: flex-start; }
+    .doc-iframe, .viewer-iframe { height: 450px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Звіти з лабораторних робіт</h1>
+  <p>Спеціальність 123 – Комп'ютерна інженерія | Лукавський Василь</p>
+</header>
+
+<nav>
+  <a href="index.html">Головна</a>
+  <a href="competencies.html">Компетенції</a>
+  <a href="components.html">Компоненти</a>
+  <a href="graph.html">Схема</a>
+  <a href="index.html#work-group">Робоча група</a>
+  <a href="reports.html" class="active">Звіти</a>
+</nav>
+
+<main class="container">
+
+  <h2>Звіти попередніх лабораторних робіт</h2>
+  <p style="font-size:0.9em; color:#555; margin-bottom:20px;">
+    Документи завантажено з Google Docs. Натисніть «Переглянути» для перегляду у вбудованому переглядачі.
+  </p>
+
+  <!-- Tab navigation -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('list')">📋 Список документів</button>
+    <button class="tab-btn" onclick="switchTab('lab1')">Лаб. робота 1</button>
+    <button class="tab-btn" onclick="switchTab('lab2')">Лаб. робота 2</button>
+    <button class="tab-btn" onclick="switchTab('lab3')">Лаб. робота 3</button>
+    <button class="tab-btn" onclick="switchTab('lab4')">Лаб. робота 4</button>
+  </div>
+
+  <!-- List tab -->
+  <div id="tab-list" class="tab-panel active">
+    <div class="doc-card">
+      <div class="doc-info">
+        <div class="title">Лабораторна робота № 1</div>
+        <div class="desc">Основи HTML. Структура веб-сторінки. Теги та атрибути.</div>
+      </div>
+      <button class="btn-view" onclick="switchTab('lab1')">Переглянути</button>
+    </div>
+    <div class="doc-card">
+      <div class="doc-info">
+        <div class="title">Лабораторна робота № 2</div>
+        <div class="desc">CSS стилізація. Селектори, властивості, адаптивна верстка.</div>
+      </div>
+      <button class="btn-view" onclick="switchTab('lab2')">Переглянути</button>
+    </div>
+    <div class="doc-card">
+      <div class="doc-info">
+        <div class="title">Лабораторна робота № 3</div>
+        <div class="desc">JavaScript. DOM-маніпуляції, події, форми.</div>
+      </div>
+      <button class="btn-view" onclick="switchTab('lab3')">Переглянути</button>
+    </div>
+    <div class="doc-card">
+      <div class="doc-info">
+        <div class="title">Лабораторна робота № 4</div>
+        <div class="desc">Багатосторінковий сайт. Навігація, таблиці, форми зворотного зв'язку.</div>
+      </div>
+      <button class="btn-view" onclick="switchTab('lab4')">Переглянути</button>
+    </div>
+  </div>
+
+  <!-- Lab 1 tab — Google Docs embed -->
+  <div id="tab-lab1" class="tab-panel">
+    <iframe
+      class="doc-iframe"
+      src="https://docs.google.com/document/d/1BxiMVs0XpMzCwX08bHhDgzO7VsNpIjHk/preview"
+      title="Лабораторна робота 1 – Google Docs">
+    </iframe>
+  </div>
+
+  <!-- Lab 2 tab -->
+  <div id="tab-lab2" class="tab-panel">
+    <iframe
+      class="doc-iframe"
+      src="https://docs.google.com/document/d/1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9S0T/preview"
+      title="Лабораторна робота 2 – Google Docs">
+    </iframe>
+  </div>
+
+  <!-- Lab 3 tab -->
+  <div id="tab-lab3" class="tab-panel">
+    <iframe
+      class="doc-iframe"
+      src="https://docs.google.com/document/d/2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V/preview"
+      title="Лабораторна робота 3 – Google Docs">
+    </iframe>
+  </div>
+
+  <!-- Lab 4 tab -->
+  <div id="tab-lab4" class="tab-panel">
+    <iframe
+      class="doc-iframe"
+      src="https://docs.google.com/document/d/3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W/preview"
+      title="Лабораторна робота 4 – Google Docs">
+    </iframe>
+  </div>
+
+  <!-- Note about Google Docs access -->
+  <div style="background:#fff8e1; border:1px solid #ffe082; border-radius:6px; padding:14px 18px; margin:24px 0; font-size:0.88em; color:#555;">
+    <strong>⚠️ Примітка:</strong> Для перегляду документів через Google Docs переконайтеся, що вони 
+    опубліковані з доступом «Переглядати для всіх, хто має посилання». 
+    Реальні посилання на документи потрібно вставити замість прикладів вище.
+  </div>
+
+</main>
+
+<footer>
+  <p>Лукавський Василь &copy; ІФНТУНГ, 2026 р.</p>
+</footer>
+
+<script>
+  function switchTab(id) {
+    // Hide all panels
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    // Show selected
+    document.getElementById('tab-' + id).classList.add('active');
+    // Activate button
+    const btns = document.querySelectorAll('.tab-btn');
+    const map = { list: 0, lab1: 1, lab2: 2, lab3: 3, lab4: 4 };
+    if (map[id] !== undefined) btns[map[id]].classList.add('active');
+  }
+</script>
+
+</body>
+</html>
