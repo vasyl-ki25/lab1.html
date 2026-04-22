@@ -1,118 +1,150 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Лабораторна робота 2</title>
+<meta charset="UTF-8">
+<title>Лабораторна робота 2</title>
 
-    <style>
-        body {
-            font-family: Verdana;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
+<style>
+body {
+    font-family: Verdana;
+    background-color: #f5f5f5;
+    margin: 20px;
+}
 
-        h1 {
-            text-align: center;
-        }
+/* Заголовки */
+h1 {
+    text-align: center;
+    font-family: Georgia;
+}
 
-        h2 {
-            border-bottom: 2px solid gray;
-        }
+h2 {
+    border-bottom: 2px solid gray;
+    font-family: Helvetica;
+}
 
-        nav {
-            text-align: center;
-            margin: 15px;
-        }
+/* Меню */
+nav {
+    text-align: center;
+    margin: 15px;
+}
 
-        nav a {
-            margin: 10px;
-            text-decoration: none;
-            color: blue;
-        }
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: red;
-        }
+nav a:hover {
+    color: red;
+}
 
-        table {
-            border-collapse: collapse;
-            width: 90%;
-            margin: auto;
-            background-color: white;
-        }
+/* Таблиця */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+}
 
-        td, th {
-            border: 1px solid black;
-            padding: 8px;
-            vertical-align: top;
-        }
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+    vertical-align: top;
+}
 
-        th {
-            background-color: #ddd;
-        }
+th {
+    background-color: #ddd;
+}
 
-        .center {
-            text-align: center;
-            font-weight: bold;
-        }
-    </style>
+.center {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Секція мети */
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+
 </head>
 
 <body>
 
 <h1>Комп'ютерна інженерія</h1>
 
-<p>Рівень: бакалавр</p>
-<p>Спеціальність: Комп’ютерна інженерія</p>
-<p>Виконав: Лукавський Василь</p>
+<p class="subtitle">Рівень: бакалавр</p>
+<p class="subtitle">Спеціальність: Комп’ютерна інженерія</p>
+<p class="subtitle">Виконав: Лукавський Василь</p>
 
 <!-- Меню -->
 <nav>
+    <a href="#meta">Мета освітньої програми</a>
+    <a href="#program">Програмні компетенції</a>
     <a href="#har">Характеристика</a>
 </nav>
+
+<!-- Мета -->
+<h2 id="meta">Мета освітньої програми</h2>
+<p class="subtitle">
+Підготовка фахівців у сфері комп’ютерної інженерії, здатних
+розробляти, аналізувати та обслуговувати комп’ютерні системи.
+</p>
+
+<!-- Компетенції -->
+<h2 id="program">Програмні компетенції</h2>
+
+<ul>
+    <li>Знання комп’ютерних систем</li>
+    <li>Вміння програмувати</li>
+    <li>Робота з мережами</li>
+</ul>
+
+<ol type="1">
+    <li>Аналіз задач</li>
+    <li>Проектування систем</li>
+    <li>Реалізація</li>
+</ol>
 
 <!-- Таблиця -->
 <h2 id="har">Характеристика освітньої програми</h2>
 
 <table>
 
-    <tr>
-        <th colspan="2" class="center">
-            3 - Характеристика освітньої програми
-        </th>
-    </tr>
+<tr>
+    <th colspan="2" class="center">
+        3 - Характеристика освітньої програми
+    </th>
+</tr>
 
-    <tr>
-        <td><b>Предметна область (галузь знань, спеціальність)</b></td>
-        <td>
-            Галузь знань - 12 "Інформаційні технології"<br>
-            Спеціальність - F7 "Комп’ютерна інженерія"
-        </td>
-    </tr>
+<tr>
+    <td><b>Предметна область</b></td>
+    <td>
+        Галузь знань - 12 "Інформаційні технології"<br>
+        Спеціальність - F7 "Комп’ютерна інженерія"
+    </td>
+</tr>
 
-    <tr>
-        <td><b>Опис предметної області</b></td>
-        <td>
-            Об’єктами професійної діяльності магістрів є:<br><br>
+<tr>
+    <td><b>Опис предметної області</b></td>
+    <td>
+        Програмно-технічні засоби комп’ютерів та мереж.<br><br>
 
-            - програмно-технічні засоби комп’ютерів та комп’ютерних систем,
-            локальних і глобальних комп’ютерних мереж та мереж Інтернет,
-            кіберфізичних систем, Інтернету речей, ІТ-інфраструктур;<br><br>
+        Методи дослідження, проектування та експлуатації систем.<br><br>
 
-            - процеси, технології, методи, способи, інструментальні засоби та системи
-            для дослідження, автоматизованого та автоматичного проектування,
-            налагодження, виробництва і експлуатації програмно-технічних засобів;<br><br>
+        Зберігання, передача та обробка інформації.
+    </td>
+</tr>
 
-            - способи подання, отримання, зберігання, передавання, опрацювання та
-            захисту інформації в комп’ютері;<br><br>
-
-            Теоретичний зміст: фундаментальні та прикладні знання з комп’ютерної інженерії.<br><br>
-
-            Методи: методи дослідження процесів у комп’ютерних системах та мережах.<br><br>
-
-            Інструменти: програмне забезпечення, комп’ютерна техніка та мережі.
-        </td>
-    </tr>
+<tr>
+    <td><b>Особливості програми</b></td>
+    <td>
+        Акцент на програмуванні, мережах та сучасних ІТ-технологіях.
+    </td>
+</tr>
 
 </table>
 
